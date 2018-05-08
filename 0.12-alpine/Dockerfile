@@ -1,4 +1,5 @@
-FROM golang AS waitforit
+FROM golang:alpine AS waitforit
+RUN apk add --no-cache git
 RUN go get github.com/ContentWise/waitforit
 
 FROM kong:0.12-alpine
